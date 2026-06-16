@@ -1,0 +1,23 @@
+.massage-container {
+  padding: 12px;
+  background-color: azure;
+  margin-top: 10px;
+  flex-grow: 1;
+  overflow: scroll;
+  position: relative;
+}
+.welcome-message {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  text-align: center;
+}
+.robot-chat {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+}
+.robot-logo,
+.user-logo {
+  width: 50px;
+}
