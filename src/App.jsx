@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { ChatInput } from "./components/ChatInput";
-// import { ChatMassage } from "./components/ChatMassage";
 import { ChatMassages } from "./components/chatMassages";
 import dayjs from "dayjs";
 import "./App.css";
@@ -32,7 +31,11 @@ function App() {
     localStorage.setItem("messages", JSON.stringify(massages));
   }, [massages]);
 
+  const title = `${massages.length} Messages`;
+
   return (
+    <>
+  <title>{title}</title>
     <div className="app-container">
       <ChatMassages massagesChat={massages} botSpine={botSpine} time={time} />
       <ChatInput
@@ -42,6 +45,8 @@ function App() {
         massagesChat={massages}
       />
     </div>
+    </>
+      
   );
 }
 
