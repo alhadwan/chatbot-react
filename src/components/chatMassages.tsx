@@ -1,11 +1,17 @@
 import { ChatMassage } from "./ChatMassage";
 import { Spine } from "./Spine";
 import { useAutoScroll } from "../hooks/useAutoScroll";
+import type { MassageChat } from "../types";
 import robotProfile from "../assets/robot.png";
 import "./chatMassages.css";
 
-export function ChatMassages({ massagesChat, botSpine }) {
-  console.log(massagesChat);
+interface ChatMassagesProps {
+  massagesChat: MassageChat[];
+  botSpine: boolean;
+}
+
+export function ChatMassages({ massagesChat, botSpine }: ChatMassagesProps) {
+
   const massageRef = useAutoScroll(massagesChat);
   return (
     <div className="massage-container" ref={massageRef}>

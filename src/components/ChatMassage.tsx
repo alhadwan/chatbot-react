@@ -3,8 +3,14 @@ import robotProfile from "../assets/robot.png";
 import "./ChatMassage.css";
 import dayjs from "dayjs";
 
-export function ChatMassage({ massage, sender, time }) {
-  console.log(userProfile);
+interface chatMassageProp{
+  massage: string;
+  sender: string;
+  time: number;
+}
+
+export function ChatMassage({ massage, sender, time }:chatMassageProp) {
+  // console.log(userProfile);
   // const massage = props.massage
   // const massage = props.sender
   // const {massage,sender} = props

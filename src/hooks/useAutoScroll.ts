@@ -1,7 +1,8 @@
 import { useRef, useEffect } from "react";
+import type { MassageChat } from "../types";
 
-export function useAutoScroll(dependencies) {
-  const massageRef = useRef(null);
+export function useAutoScroll(dependencies: MassageChat[]) {
+  const massageRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const massagesElem = massageRef.current;
     if (massagesElem) {

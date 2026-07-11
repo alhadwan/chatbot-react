@@ -1,14 +1,23 @@
 import { useState } from "react";
 import { Chatbot } from "supersimpledev";
+import type{ MassageChat } from "../types";
 import "./ChatInput.css";
+
+interface ChatInputProps {
+  massagesChat: MassageChat[];
+  setMassages: React.Dispatch<React.SetStateAction<MassageChat[]>>;
+  setBotSpine: React.Dispatch<React.SetStateAction<boolean>>;
+  time: number;
+
+}
 
 export function ChatInput({
   setMassages,
   massagesChat,
   setBotSpine,
   time,
-  setShowWelcomeMassage,
-}) {
+
+}: ChatInputProps) {
   const [input, setInput] = useState("");
 
   function handleSubmit() {
@@ -47,7 +56,7 @@ export function ChatInput({
         onChange={(e) => setInput(e.target.value)}
         className="chat-input"
         type="text"
-        size="30"
+        // size="30"
         placeholder="Send a message to Chatbot"
       />
       <button className="send-button" onClick={handleSubmit}>
@@ -58,7 +67,7 @@ export function ChatInput({
         onClick={() => {
           localStorage.clear();
           setMassages([]);
-          setShowWelcomeMassage(true);
+        
         }}
       >
         Clear
