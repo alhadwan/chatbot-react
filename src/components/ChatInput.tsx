@@ -56,7 +56,7 @@ export function ChatInput({
         onChange={(e) => setInput(e.target.value)}
         className="chat-input"
         type="text"
-        // size="30"
+        size={30}
         placeholder="Send a message to Chatbot"
       />
       <button className="send-button" onClick={handleSubmit}>
